@@ -4,8 +4,6 @@ import logo from "../logo.svg";
 import { ChevronRight, Store } from "lucide-react";
 
 const SideNav = ({ sections, activeIndex, setactiveIndex }) => {
-  const [open, setOpen] = useState(true);
-
   const [width, setWidth] = useState(window.innerWidth);
   const updateDimensions = () => {
     setWidth(window.innerWidth);
@@ -14,12 +12,13 @@ const SideNav = ({ sections, activeIndex, setactiveIndex }) => {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
+  const [open, setOpen] = useState(width > 600 ? true : false);
   return (
     <div className="flex absolute z-1 top-0 left-0 bg-[white]">
       <div
         className={` ${
-          open ? "w-72" : "w-20 "
-        }  p-5  pt-8 relative duration-300`}
+          open ? " md:w-72 w-56" : "md:w-20 w-12"
+        }  md:p-5 p-[0.3rem]   pt-8 relative duration-300`}
       >
         <img
           src="/assets/control.png"
@@ -45,13 +44,12 @@ const SideNav = ({ sections, activeIndex, setactiveIndex }) => {
               key={index}
               className={`flex rounded-md align-middle cursor-pointer hover:bg-primary hover:text-[white] text-[#36454F] text-sm items-center gap-x-4 mt-4 border-[1px] border-[#dedede]
               ${index === activeIndex && "bg-primary text-[white]"} ${
-                open ? "p-4" : "p-2"
+                open ? "md:p-4 p-2" : "p-2"
               }`}
               onClick={() => {
                 setactiveIndex(index);
                 // console.log(width);
                 if (width <= 600) setOpen(false);
-                // console.log(section.src);
               }}
             >
               {/* <img

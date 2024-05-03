@@ -34,19 +34,6 @@ const Main = () => {
         setactiveIndex={setactiveIndex}
       />
     </>
-    // <div className="flex">
-    //   <SideNav
-    //     sections={sections}
-    //     activeIndex={activeIndex}
-    //     setactiveIndex={setactiveIndex}
-    //   />
-
-    //   <Editor
-    //     sections={sections}
-    //     activeIndex={activeIndex}
-    //     setactiveIndex={setactiveIndex}
-    //   />
-    // </div>
   );
 };
 

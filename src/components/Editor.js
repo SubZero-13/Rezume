@@ -55,8 +55,8 @@ const Editor = ({ sections, activeIndex, setactiveIndex }) => {
     }
   }, [activeIndex]);
   return (
-    <div className="flex mt-6 flex-col  md:mt-20 md:max-w-[900px] md:mx-auto mx-20 md:px-20">
-      <h1 className="font-semibold text-3xl text-[#676765] md:mx-0 mx-auto">
+    <div className="flex mt-6 flex-col  md:mt-20 md:max-w-[900px] md:mx-auto mx-16 md:px-20">
+      <h1 className="font-semibold text-3xl  md:mx-0 mx-auto">
         {sections[activeIndex].title}
       </h1>
 

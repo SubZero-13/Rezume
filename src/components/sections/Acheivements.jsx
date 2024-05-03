@@ -1,16 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import InputControl from "./InputControl";
-import { ChevronRight, Plus } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ResumeData } from "../../contexts/ResumeData";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
-const Acheivements = () => {
-  const [experienceCount, setExperienceCount] = useState(1);
+const Acheivements = ({ activeIndex, setactiveIndex }) => {
   const { updateAcheivement, resume } = useContext(ResumeData);
   const { register, handleSubmit } = useForm();
+  let navigate = useNavigate();
 
   const AcheivementSubmit = (data) => {
     updateAcheivement(data);
+    navigate("/resume/download");
     console.log(data);
   };
   return (
@@ -34,7 +36,6 @@ const Acheivements = () => {
           defaultValue={resume.acheivement.acheivement2}
         />
       </div>
-      {console.log(resume)}
 
       <div className="flex md:gap-24 gap-1  md:flex-row flex-col">
         <InputControl
@@ -51,10 +52,21 @@ const Acheivements = () => {
         />
       </div>
       {/* next button starts*/}
-      <div className="fixed bottom-20 right-40">
-        <div className="sm:flex sm:gap-4 ">
+      <div className="flex justify-between my-10">
+        <div className="sm:flex sm:gap-4">
           <button
-            className="rounded-lg bg-primary px-6 py-3 text-base font-semibold flex gap-2 text-center text-[white] shadow"
+            className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
+            onClick={() => {
+              setactiveIndex(activeIndex - 1);
+            }}
+          >
+            <ChevronLeft width={28} height={28} />
+            Prev
+          </button>
+        </div>
+        <div className="sm:flex sm:gap-4">
+          <button
+            className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
             // onClick={() => {
             //   activeIndex === 5
             //     ? setactiveIndex(0)
@@ -67,6 +79,7 @@ const Acheivements = () => {
           </button>
         </div>
       </div>
+
       {/* next button ends */}
     </form>
   );

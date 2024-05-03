@@ -4,24 +4,23 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div
-      className="flex flex-col justify-between items-center w-[100%] mx-auto my-12 max-w-[900px] md:p-7 px-[20px]"
+      className="flex flex-col justify-between items-center w-[100%] mx-auto my-24 max-w-[900px] md:p-7 px-[20px]"
       id="home"
     >
-      <h1 className="md:text-[3rem] text-2xl font-medium md:leading-[4rem] leading-[2rem] font-['Lexend'] text-center">
+      <h1 className="md:text-[3rem] text-[1.8rem] font-medium md:leading-[4rem] leading-[2rem] font-['Lexend'] text-center">
         Make the right <strong className="text-primary ">Rezume</strong> and
         land your dream job!
       </h1>
-      <p className="max-w-[700px] text-lg mt-3 pt-3 leading-8 text-center text-[#36454F]">
-        Just like you, your resume should be unique and matching your skills{" "}
-        <br />
-        catch the very attention of your future employer! <br />
-        with <strong>Resume</strong> it's now possible!
+      <p className="max-w-[550px] text-lg mt-3 pt-3 leading-8 text-center text-[#71797E]">
+        Just like you, your resume should be unique and matching your skills.
+        Catch the very attention of your future employer! with{" "}
+        <strong>Rezume</strong> it's now possible!
       </p>
 
       <div className="flex gap-5 mt-10 md:flex-row flex-col">
         <div className="sm:flex sm:gap-4 ">
           <Link
-            className="rounded bg-primary px-12 py-4 text-base font-semibold text-[white] shadow"
+            className="rounded-full bg-primary px-12 py-4 text-base font-semibold text-[white] shadow"
             to="/resume"
           >
             Build Your Rezume Now
@@ -74,8 +73,9 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <p className="max-w-[700px] text-base font-semibold mt-1 pt-3 leading-8 text-center text-[#36454F]">
-        You heard it right, No signup or subscription is required
+      <p className="max-w-[700px] text-base font-medium mt-1 pt-3 leading-8 text-center text-[#36454F]">
+        <span className="w-2 h-2 text-[#339d5d] animate-pulse-slow">● </span>No
+        signup or subscription needed
       </p>
     </div>
   );

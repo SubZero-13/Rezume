@@ -10,6 +10,7 @@ const PersonalInfo = ({ activeIndex, setactiveIndex }) => {
 
   const PersonalSubmit = (data) => {
     updatePersonal(data);
+    activeIndex === 5 ? setactiveIndex(0) : setactiveIndex(activeIndex + 1);
     console.log(data);
   };
   return (
@@ -68,21 +69,19 @@ const PersonalInfo = ({ activeIndex, setactiveIndex }) => {
       </div>
 
       {/* next button starts*/}
-      <div className="fixed bottom-20 right-40">
-        <div className="sm:flex sm:gap-4 ">
-          <button
-            className="rounded-lg bg-primary px-6 py-3 text-base font-semibold flex gap-2 text-center text-[white] shadow"
-            // onClick={() => {
-            //   activeIndex === 5
-            //     ? setactiveIndex(0)
-            //     : setactiveIndex(activeIndex + 1);
-            // }}
-            type="submit"
-          >
-            Next
-            <ChevronRight width={28} height={28} />
-          </button>
-        </div>
+      <div className=" sm:gap-4 flex justify-end my-10">
+        <button
+          className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
+          // onClick={() => {
+          //   activeIndex === 5
+          //     ? setactiveIndex(0)
+          //     : setactiveIndex(activeIndex + 1);
+          // }}
+          type="submit"
+        >
+          Next
+          <ChevronRight width={28} height={28} />
+        </button>
       </div>
       {/* next button ends */}
     </form>

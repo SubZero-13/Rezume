@@ -27,31 +27,31 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
+                  <a
                     className="text-[#899499] transition hover:text-primary"
-                    to="/"
+                    href="#about"
                   >
                     {" "}
                     About{" "}
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     className="text-[#899499] transition hover:text-primary"
-                    to="/"
+                    href="#steps"
                   >
                     {" "}
                     How To{" "}
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     className="text-[#899499] transition hover:text-primary"
-                    to="/"
+                    href="#footer"
                   >
                     {" "}
                     Contact{" "}
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -61,7 +61,7 @@ const Header = () => {
             <div className="sm:flex sm:gap-4 ">
               <Link
                 className="border-solid border-2 border-primary rounded-md bg-transparent  text-primary px-5 py-2.5 text-sm font-semibold hover:bg-white hover:text-black"
-                to="/"
+                to="/resume"
               >
                 Build Now
               </Link>

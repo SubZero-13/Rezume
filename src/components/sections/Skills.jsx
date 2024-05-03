@@ -1,15 +1,16 @@
 import React, { useContext } from "react";
 import InputControl from "./InputControl";
-import { ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { ResumeData } from "../../contexts/ResumeData";
 
-const Skills = () => {
+const Skills = ({ activeIndex, setactiveIndex }) => {
   const { updateSkills, resume } = useContext(ResumeData);
   const { register, handleSubmit } = useForm();
 
   const skillSubmit = (data) => {
     updateSkills(data);
+    activeIndex === 5 ? setactiveIndex(0) : setactiveIndex(activeIndex + 1);
     console.log(data);
   };
   return (
@@ -50,10 +51,21 @@ const Skills = () => {
       </div>
 
       {/* next button starts*/}
-      <div className="fixed bottom-20 right-40">
-        <div className="sm:flex sm:gap-4 ">
+      <div className="flex justify-between my-10">
+        <div className="sm:flex sm:gap-4">
           <button
-            className="rounded-lg bg-primary px-6 py-3 text-base font-semibold flex gap-2 text-center text-[white] shadow"
+            className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
+            onClick={() => {
+              setactiveIndex(activeIndex - 1);
+            }}
+          >
+            <ChevronLeft width={28} height={28} />
+            Prev
+          </button>
+        </div>
+        <div className="sm:flex sm:gap-4">
+          <button
+            className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
             // onClick={() => {
             //   activeIndex === 5
             //     ? setactiveIndex(0)
@@ -66,6 +78,7 @@ const Skills = () => {
           </button>
         </div>
       </div>
+
       {/* next button ends */}
     </form>
   );

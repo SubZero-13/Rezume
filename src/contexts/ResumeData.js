@@ -13,6 +13,10 @@ const ResumeContextProvider = (props) => {
     }
   );
 
+  const [experienceCount, setExperienceCount] = useState(1);
+  const [projectCount, setProjectCount] = useState(1);
+  const [educationCount, setEducationCount] = useState(1);
+
   function updatePersonal(data) {
     setResume({ ...resume, personal: data });
   }
@@ -37,6 +41,19 @@ const ResumeContextProvider = (props) => {
     setResume({ ...resume, acheivement: data });
   }
 
+  const deleteExpItem = (i) => {
+    delete resume.experience[`designation${i}`];
+    delete resume.experience[`company${i}`];
+    delete resume.experience[`duration${i}`];
+    delete resume.experience[`location${i}`];
+    delete resume.experience[`Ex${i}details1`];
+    delete resume.experience[`Ex${i}details2`];
+    delete resume.experience[`Ex${i}details3`];
+    updateExperience(resume.experience);
+    setResume({ ...resume, experience: resume.experience });
+    console.log(resume.experience);
+  };
+
   useEffect(() => {
     localStorage.setItem("resumeLocal", JSON.stringify(resume));
   }, [resume]);
@@ -49,6 +66,13 @@ const ResumeContextProvider = (props) => {
     updateExperience,
     updateProject,
     updateAcheivement,
+    experienceCount,
+    setExperienceCount,
+    projectCount,
+    setProjectCount,
+    educationCount,
+    setEducationCount,
+    deleteExpItem,
   };
 
   return (
