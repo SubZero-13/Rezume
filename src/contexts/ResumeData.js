@@ -52,6 +52,22 @@ const ResumeContextProvider = (props) => {
     updateExperience(resume.experience);
     setResume({ ...resume, experience: resume.experience });
     console.log(resume.experience);
+    // setExperienceCount(experienceCount - 1);
+    // console.log("deleted");
+  };
+
+  const deleteProjectItem = (i) => {
+    delete resume.project[`title${i}`];
+    delete resume.project[`techStacks${i}`];
+    delete resume.project[`deployedLink${i}`];
+    delete resume.project[`githubLink${i}`];
+    delete resume.project[`P${i}details1`];
+    delete resume.project[`P${i}details2`];
+    delete resume.project[`P${i}details3`];
+    updateExperience(resume.project);
+    setResume({ ...resume, project: resume.project });
+    console.log(resume.project);
+    setProjectCount(projectCount - 1);
   };
 
   useEffect(() => {
@@ -73,6 +89,7 @@ const ResumeContextProvider = (props) => {
     educationCount,
     setEducationCount,
     deleteExpItem,
+    deleteProjectItem,
   };
 
   return (

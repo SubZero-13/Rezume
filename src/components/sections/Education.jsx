@@ -49,16 +49,16 @@ const Education = ({ activeIndex, setactiveIndex }) => {
             </div>
             <div className="flex md:gap-24 gap-3  md:flex-row flex-col mb-8">
               <InputControl
-                label="Start Date"
-                placeholder="Enter start date of this education"
-                register={register(`startDate${i}`)}
-                defaultValue={resume.education[`startDate${i}`]}
+                label="Duration"
+                placeholder="Mar 2021 - Aug 2025"
+                register={register(`duration${i}`)}
+                defaultValue={resume.education[`duration${i}`]}
               />
               <InputControl
-                label="End Date"
-                placeholder="Enter end date of this education"
-                register={register(`endDate${i}`)}
-                defaultValue={resume.education[`endDate${i}`]}
+                label="Location"
+                placeholder="Location eg: Patna, Bihar"
+                register={register(`location${i}`)}
+                defaultValue={resume.education[`location${i}`]}
               />
             </div>
           </>

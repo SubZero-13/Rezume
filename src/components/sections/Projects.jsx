@@ -1,18 +1,23 @@
 import React, { useContext, useState } from "react";
 import InputControl from "./InputControl";
-import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
+import { ChevronLeft, ChevronRight, Plus, Trash } from "lucide-react";
 import { ResumeData } from "../../contexts/ResumeData";
 import { useForm } from "react-hook-form";
 
 const Projects = ({ activeIndex, setactiveIndex }) => {
-  const { projectCount, setProjectCount, updateProject, resume } =
-    useContext(ResumeData);
+  const {
+    projectCount,
+    setProjectCount,
+    deleteProjectItem,
+    updateProject,
+    resume,
+  } = useContext(ResumeData);
   const { register, handleSubmit } = useForm();
 
   const projectSubmit = (data) => {
     updateProject(data);
-    setactiveIndex(activeIndex + 1);
     console.log(data);
+    setactiveIndex(activeIndex + 1);
   };
   return (
     <form
@@ -82,30 +87,41 @@ const Projects = ({ activeIndex, setactiveIndex }) => {
                 <InputControl
                   placeholder="What your responsibilities were"
                   detail={true}
-                  register={register(`P${i + 1}details1`)}
-                  defaultValue={resume.experience[`P${i + 1}details1`]}
+                  register={register(`P${i}details1`)}
+                  defaultValue={resume.project[`P${i}details1`]}
                 />
               </div>
               <div className="flex flex-col gap-2">
                 <InputControl
                   placeholder="What your responsibilities were"
                   detail={true}
-                  register={register(`P${i + 1}details2`)}
-                  defaultValue={resume.experience[`P${i + 1}details2`]}
+                  register={register(`P${i}details2`)}
+                  defaultValue={resume.project[`P${i}details2`]}
                 />
               </div>
               <div className="flex flex-col gap-2">
                 <InputControl
                   placeholder="What your responsibilities were"
-                  register={register(`P${i + 1}details3`)}
+                  register={register(`P${i}details3`)}
                   detail={true}
-                  defaultValue={resume.experience[`P${i + 1}details3`]}
+                  defaultValue={resume.project[`P${i}details3`]}
                 />
               </div>
             </div>
           </div>
         );
       })}
+      {projectCount > 1 && (
+        <div className="sm:flex sm:gap-4 ">
+          <div
+            className="rounded-xl bg-[white] md:px-6 md:py-3 px-3 py-1 text-sm font-semibold flex md:gap-2 gap-1 text-center text-primary shadow-[0_3px_10px_rgb(0,0,0,0.2)] cursor-pointer mx-auto hover:bg-primary hover:text-[white]"
+            onClick={() => deleteProjectItem(projectCount)}
+          >
+            Delete
+            <Trash width={20} height={20} />
+          </div>
+        </div>
+      )}
       {projectCount < 3 && (
         <div
           className="flex mt-8 gap-2 align-middle text-center cursor-pointer"

@@ -117,7 +117,6 @@ const Resume = () => {
     <PDFViewer>
       <Document>
         <Page size="A4" style={styles.page}>
-          {/* Education Section */}
           <View style={styles.header}>
             <Text style={styles.name}>
               {resume.personal.firstName + " " + resume.personal.lastName}
@@ -134,6 +133,7 @@ const Resume = () => {
               </Link>
             </Text>
           </View>
+          {/* Education Section */}
           <View style={styles.sections}>
             <Text style={styles.heading}>Education</Text>
             <Svg height="2" width="530">
@@ -149,17 +149,44 @@ const Resume = () => {
             <View style={styles.section}>
               <View style={styles.innerHead}>
                 <Text style={styles.innerHead1}>
-                  {resume.education.college}
+                  {resume.education.college0}
                 </Text>
-                <Text style={styles.innerHead2}>{}</Text>
-              </View>
-              <View style={styles.innerHead}>
-                <Text style={styles.innerHead2}>{resume.education.title}</Text>
                 <Text style={styles.innerHead2}>
-                  {resume.education.startDate} {"-"} {resume.education.endDate}
+                  {resume.education.location0}
+                </Text>
+              </View>
+
+              <View style={styles.innerHead}>
+                <Text style={styles.innerHead2}>{resume.education.title0}</Text>
+                <Text style={styles.innerHead2}>
+                  {resume.education.duration0}
                 </Text>
               </View>
             </View>
+
+            {resume.education.college1 &&
+              resume.education.location1 &&
+              resume.education.title1 &&
+              resume.education.duration1 && (
+                <View style={styles.section}>
+                  <View style={styles.innerHead}>
+                    <Text style={styles.innerHead1}>
+                      {resume.education.college1}
+                    </Text>
+                    <Text style={styles.innerHead2}>
+                      {resume.education.location1}
+                    </Text>
+                  </View>
+                  <View style={styles.innerHead}>
+                    <Text style={styles.innerHead2}>
+                      {resume.education.title1}
+                    </Text>
+                    <Text style={styles.innerHead2}>
+                      {resume.education.duration1}
+                    </Text>
+                  </View>
+                </View>
+              )}
           </View>
 
           {/* Experience section */}
@@ -178,36 +205,73 @@ const Resume = () => {
             <View style={styles.section}>
               <View style={styles.innerHead}>
                 <Text style={styles.innerHead1}>
-                  {resume.experience.designation}
+                  {resume.experience.designation0}
                 </Text>
                 <Text style={styles.innerHead2}>
-                  {resume.experience.startDate} {"-"}{" "}
-                  {resume.experience.endDate}
+                  {resume.experience.duration0}
                 </Text>
               </View>
               <View style={styles.innerHead}>
                 <Text style={styles.innerHead2}>
-                  {resume.experience.company}
+                  {resume.experience.company0}
                 </Text>
                 <Text style={styles.innerHead2}>
-                  {resume.experience.location}
+                  {resume.experience.location0}
                 </Text>
               </View>
               <View style={styles.points}>
                 <View style={styles.point}>
                   <Text>•</Text>
-                  <Text>{resume.experience.details}</Text>
+                  <Text>{resume.experience.Ex0details1}</Text>
                 </View>
                 <View style={styles.point}>
                   <Text>•</Text>
-                  <Text>{resume.experience.details}</Text>
+                  <Text>{resume.experience.Ex0details2}</Text>
                 </View>
                 <View style={styles.point}>
                   <Text>•</Text>
-                  <Text>{resume.experience.details}</Text>
+                  <Text>{resume.experience.Ex0details3}</Text>
                 </View>
               </View>
             </View>
+
+            {resume.experience.designation1 &&
+              resume.experience.duration1 &&
+              resume.experience.company1 &&
+              resume.experience.location1 && (
+                <View style={styles.section}>
+                  <View style={styles.innerHead}>
+                    <Text style={styles.innerHead1}>
+                      {resume.experience.designation1}
+                    </Text>
+                    <Text style={styles.innerHead2}>
+                      {resume.experience.duration1}
+                    </Text>
+                  </View>
+                  <View style={styles.innerHead}>
+                    <Text style={styles.innerHead2}>
+                      {resume.experience.company1}
+                    </Text>
+                    <Text style={styles.innerHead2}>
+                      {resume.experience.location1}
+                    </Text>
+                  </View>
+                  <View style={styles.points}>
+                    <View style={styles.point}>
+                      <Text>•</Text>
+                      <Text>{resume.experience.Ex1details1}</Text>
+                    </View>
+                    <View style={styles.point}>
+                      <Text>•</Text>
+                      <Text>{resume.experience.Ex1details2}</Text>
+                    </View>
+                    <View style={styles.point}>
+                      <Text>•</Text>
+                      <Text>{resume.experience.Ex1details3}</Text>
+                    </View>
+                  </View>
+                </View>
+              )}
           </View>
 
           {/* Projects Section */}
@@ -227,24 +291,30 @@ const Resume = () => {
               <View style={styles.innerHead}>
                 <View style={styles.projectTitle}>
                   <Text style={styles.innerHead1}>
-                    {resume.project.title + "  "}
+                    {resume.project.title0 + "  "}
                   </Text>
                   <Text style={styles.innerHead2}>
                     {"|" + "  "}
-                    {resume.project.techStacks + "  "}
+                    {resume.project.techStacks0 + "  "}
                   </Text>
                   <Text style={styles.innerHead2}>
                     {"|" + "  "}
-                    {resume.project.githubLink && (
-                      <Link style={styles.link} src={resume.project.githubLink}>
+                    {resume.project.githubLink0 && (
+                      <Link
+                        style={styles.link}
+                        src={resume.project.githubLink0}
+                      >
                         Source Code
                       </Link>
                     )}
                   </Text>
                 </View>
                 <Text style={styles.innerHead2}>
-                  {resume.project.deployedLink && (
-                    <Link style={styles.link} src={resume.project.deployedLink}>
+                  {resume.project.deployedLink0 && (
+                    <Link
+                      style={styles.link}
+                      src={resume.project.deployedLink0}
+                    >
                       Deployed Link
                     </Link>
                   )}
@@ -254,15 +324,15 @@ const Resume = () => {
               <View style={styles.points}>
                 <View style={styles.point}>
                   <Text>•</Text>
-                  <Text>{resume.experience.details}</Text>
+                  <Text>{resume.project.P0details1}</Text>
                 </View>
                 <View style={styles.point}>
                   <Text>•</Text>
-                  <Text>{resume.experience.details}</Text>
+                  <Text>{resume.project.P0details2}</Text>
                 </View>
                 <View style={styles.point}>
                   <Text>•</Text>
-                  <Text>{resume.experience.details}</Text>
+                  <Text>{resume.project.P0details3}</Text>
                 </View>
               </View>
             </View>
@@ -271,24 +341,30 @@ const Resume = () => {
               <View style={styles.innerHead}>
                 <View style={styles.projectTitle}>
                   <Text style={styles.innerHead1}>
-                    {resume.project.title + "  "}
+                    {resume.project.title1 + "  "}
                   </Text>
                   <Text style={styles.innerHead2}>
                     {"|" + "  "}
-                    {resume.project.techStacks + "  "}
+                    {resume.project.techStacks1 + "  "}
                   </Text>
                   <Text style={styles.innerHead2}>
                     {"|" + "  "}
-                    {resume.project.githubLink && (
-                      <Link style={styles.link} src={resume.project.githubLink}>
+                    {resume.project.githubLink1 && (
+                      <Link
+                        style={styles.link}
+                        src={resume.project.githubLink1}
+                      >
                         Source Code
                       </Link>
                     )}
                   </Text>
                 </View>
                 <Text style={styles.innerHead2}>
-                  {resume.project.deployedLink && (
-                    <Link style={styles.link} src={resume.project.deployedLink}>
+                  {resume.project.deployedLink1 && (
+                    <Link
+                      style={styles.link}
+                      src={resume.project.deployedLink1}
+                    >
                       Deployed Link
                     </Link>
                   )}
@@ -298,15 +374,15 @@ const Resume = () => {
               <View style={styles.points}>
                 <View style={styles.point}>
                   <Text>•</Text>
-                  <Text>{resume.experience.details}</Text>
+                  <Text>{resume.project.P1details1}</Text>
                 </View>
                 <View style={styles.point}>
                   <Text>•</Text>
-                  <Text>{resume.experience.details}</Text>
+                  <Text>{resume.project.P1details2}</Text>
                 </View>
                 <View style={styles.point}>
                   <Text>•</Text>
-                  <Text>{resume.experience.details}</Text>
+                  <Text>{resume.project.P1details3}</Text>
                 </View>
               </View>
             </View>
@@ -348,7 +424,7 @@ const Resume = () => {
           </View>
 
           {/* Acheivements Section */}
-          <View style={styles.sections}>
+          {/* <View style={styles.sections}>
             <Text style={styles.heading}>Acheivements</Text>
             <Svg height="2" width="530">
               <Line
@@ -380,7 +456,7 @@ const Resume = () => {
                 </View>
               </View>
             </View>
-          </View>
+          </View> */}
         </Page>
       </Document>
     </PDFViewer>

@@ -50,16 +50,10 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
         return (
           <>
             {experienceCount > 1 ? (
-              <div className="flex justify-between">
+              <div className="flex ">
                 <h1 className="font-semibold text-xl text-primary mt-2 md:mx-0 mx-auto">
                   Experience {i + 1}
                 </h1>
-                <span
-                  className="text-primary cursor-pointer"
-                  onClick={() => deleteExpItem(i)}
-                >
-                  <Trash />
-                </span>
               </div>
             ) : (
               ""
@@ -125,6 +119,18 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
           </>
         );
       })}
+      {experienceCount > 1 && (
+        <div className="sm:flex sm:gap-4 ">
+          <span
+            className="rounded-xl bg-[white] md:px-6 md:py-3 px-3 py-1 text-sm font-semibold flex md:gap-2 gap-1 text-center text-primary shadow-[0_3px_10px_rgb(0,0,0,0.2)] cursor-pointer mx-auto hover:bg-primary hover:text-[white]"
+            onClick={() => deleteExpItem(experienceCount)}
+          >
+            Delete
+            <Trash width={20} height={20} />
+          </span>
+        </div>
+      )}
+
       {experienceCount < 2 && (
         <div
           className="flex mt-8 gap-2 cursor-pointer"
