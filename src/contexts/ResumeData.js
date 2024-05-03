@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 
 export const ResumeData = createContext();
 const ResumeContextProvider = (props) => {
@@ -12,6 +13,7 @@ const ResumeContextProvider = (props) => {
       acheivement: {},
     }
   );
+  const { unregister } = useForm();
 
   const [experienceCount, setExperienceCount] = useState(1);
   const [projectCount, setProjectCount] = useState(1);
@@ -49,10 +51,17 @@ const ResumeContextProvider = (props) => {
     delete resume.experience[`Ex${i}details1`];
     delete resume.experience[`Ex${i}details2`];
     delete resume.experience[`Ex${i}details3`];
+    unregister(resume.experience[`designation${i}`]);
+    // delete resume.experience[`designation${i}`];
+    // delete resume.experience[`company${i}`];
+    // delete resume.experience[`duration${i}`];
+    // delete resume.experience[`location${i}`];
+    // delete resume.experience[`Ex${i}details1`];
+    // delete resume.experience[`Ex${i}details2`];
     updateExperience(resume.experience);
     setResume({ ...resume, experience: resume.experience });
     console.log(resume.experience);
-    // setExperienceCount(experienceCount - 1);
+    setExperienceCount(experienceCount - 1);
     // console.log("deleted");
   };
 
