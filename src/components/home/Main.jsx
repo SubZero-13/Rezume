@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Editor from "./../Editor";
+import Editor from "../Editor";
 import SideNav from "./../SideNav";
 import {
   BrainCircuit,
