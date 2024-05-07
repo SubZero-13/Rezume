@@ -13,7 +13,7 @@ const SideNav = ({ sections, activeIndex, setactiveIndex }) => {
   }, []);
   const [open, setOpen] = useState(width > 600 ? true : false);
   return (
-    <div className="flex absolute z-1 top-0 left-0 bg-[white]">
+    <div className="flex absolute z-1 top-0 left-0 bg-[white] ">
       <div
         className={` ${
           open ? " md:w-72 w-56" : "md:w-20 w-12"
