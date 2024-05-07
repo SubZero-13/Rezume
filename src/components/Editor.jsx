@@ -5,7 +5,6 @@ import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Education from "./sections/Education";
 import Acheivement from "./sections/Acheivements";
-import suggestion from "./suggestion.json";
 
 const Editor = ({ sections, activeIndex, setactiveIndex }) => {
   const renderContent = React.useCallback(() => {
@@ -55,6 +54,33 @@ const Editor = ({ sections, activeIndex, setactiveIndex }) => {
         return null;
     }
   }, [activeIndex]);
+
+  const suggestion = [
+    {
+      id: 0,
+      desc: "Avoid college or work Email",
+    },
+    {
+      id: 1,
+      desc: "Avoid adding any club volunteer role here",
+    },
+    {
+      id: 2,
+      desc: "Add atleast 2 best projects",
+    },
+    {
+      id: 3,
+      desc: "Write according to job role",
+    },
+    {
+      id: 4,
+      desc: "Avoid 10th and 12th details",
+    },
+    {
+      id: 5,
+      desc: "Your proud things",
+    },
+  ];
   return (
     <div className="flex mt-6 flex-col  md:mt-20 md:max-w-[900px] md:mx-auto mx-16 md:px-20">
       <h1 className="font-semibold text-3xl  md:mx-0 mx-auto flex gap-2 items-center">
