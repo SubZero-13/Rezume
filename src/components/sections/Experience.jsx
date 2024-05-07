@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import InputControl from "./InputControl";
 import { ChevronLeft, ChevronRight, Plus, Trash } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -12,31 +12,19 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
     updateExperience,
     resume,
   } = useContext(ResumeData);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const ExperienceSubmit = (data) => {
     updateExperience(data);
+    reset();
     console.log(data);
-    // activeIndex === 5 ? setactiveIndex(0) : setactiveIndex(activeIndex + 1);
+    activeIndex === 5 ? setactiveIndex(0) : setactiveIndex(activeIndex + 1);
   };
 
-  // const deleteItem = (i) => {
-  //   delete resume.experience[`designation${i}`];
-  //   delete resume.experience[`company${i}`];
-  //   delete resume.experience[`duration${i}`];
-  //   delete resume.experience[`location${i}`];
-  //   delete resume.experience[`Ex${i}details1`];
-  //   delete resume.experience[`Ex${i}details2`];
-  //   delete resume.experience[`Ex${i}details3`];
-  //   setExperienceCount(experienceCount - 1);
-  //   localStorage.setItem(
-  //     "resume.experience",
-  //     JSON.stringify(resume.experience)
-  //   );
-  //   updateExperience(resume.experience);
+  useEffect(() => {
+    reset();
+  }, [deleteExpItem]);
 
-  //   console.log(resume.experience);
-  // };
   return (
     <form
       className="mt-2 mx-3"
@@ -54,13 +42,6 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
                 <h1 className="font-semibold text-xl text-primary mt-2 md:mx-0 mx-auto">
                   Experience {i + 1}
                 </h1>
-                {/* <span
-                  className="rounded-xl bg-[white] md:px-6 md:py-3 px-3 py-1 text-sm font-semibold flex md:gap-2 gap-1 text-center text-primary shadow-[0_3px_10px_rgb(0,0,0,0.2)] cursor-pointer mx-auto hover:bg-primary hover:text-[white]"
-                  onClick={() => deleteExpItem(i)}
-                >
-                  Delete
-                  <Trash width={20} height={20} />
-                </span> */}
               </div>
             ) : (
               ""
@@ -153,7 +134,7 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
         </div>
       )}
 
-      {/* next button starts*/}
+      {/* prev button */}
       <div className="flex justify-between my-10">
         <div className="sm:flex sm:gap-4">
           <button
@@ -166,14 +147,10 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
             Prev
           </button>
         </div>
+        {/* next button */}
         <div className="sm:flex sm:gap-4">
           <button
             className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
-            // onClick={() => {
-            //   activeIndex === 5
-            //     ? setactiveIndex(0)
-            //     : setactiveIndex(activeIndex + 1);
-            // }}
             type="submit"
           >
             Next
@@ -181,8 +158,6 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
           </button>
         </div>
       </div>
-
-      {/* next button ends */}
     </form>
   );
 };

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { createTw } from "react-pdf-tailwind";
 import { ResumeData } from "../contexts/ResumeData";
 import {
   Text,
@@ -164,10 +163,10 @@ const Resume = () => {
               </View>
             </View>
 
-            {resume.education.college1 &&
-              resume.education.location1 &&
-              resume.education.title1 &&
-              resume.education.duration1 && (
+            {resume.education.college1?.length > 2 &&
+              resume.education.location1?.length > 2 &&
+              resume.education.title1?.length > 2 &&
+              resume.education.duration1?.length > 2 && (
                 <View style={styles.section}>
                   <View style={styles.innerHead}>
                     <Text style={styles.innerHead1}>
@@ -235,10 +234,10 @@ const Resume = () => {
               </View>
             </View>
 
-            {resume.experience.designation1 &&
-              resume.experience.duration1 &&
-              resume.experience.company1 &&
-              resume.experience.location1 && (
+            {resume.experience.designation1?.length > 2 &&
+              resume.experience.duration1?.length > 2 &&
+              resume.experience.company1?.length > 2 &&
+              resume.experience.location1?.length > 2 && (
                 <View style={styles.section}>
                   <View style={styles.innerHead}>
                     <Text style={styles.innerHead1}>
@@ -337,55 +336,60 @@ const Resume = () => {
               </View>
             </View>
 
-            <View style={styles.section}>
-              <View style={styles.innerHead}>
-                <View style={styles.projectTitle}>
-                  <Text style={styles.innerHead1}>
-                    {resume.project.title1 + "  "}
-                  </Text>
-                  <Text style={styles.innerHead2}>
-                    {"|" + "  "}
-                    {resume.project.techStacks1 + "  "}
-                  </Text>
-                  <Text style={styles.innerHead2}>
-                    {"|" + "  "}
-                    {resume.project.githubLink1 && (
-                      <Link
-                        style={styles.link}
-                        src={resume.project.githubLink1}
-                      >
-                        Source Code
-                      </Link>
-                    )}
-                  </Text>
-                </View>
-                <Text style={styles.innerHead2}>
-                  {resume.project.deployedLink1 && (
-                    <Link
-                      style={styles.link}
-                      src={resume.project.deployedLink1}
-                    >
-                      Deployed Link
-                    </Link>
-                  )}
-                </Text>
-              </View>
+            {resume.project.title1?.length > 2 &&
+              resume.project.techStacks11?.length > 2 &&
+              resume.project.deployedLink1?.length > 2 &&
+              resume.project.githubLink1?.length > 2 && (
+                <View style={styles.section}>
+                  <View style={styles.innerHead}>
+                    <View style={styles.projectTitle}>
+                      <Text style={styles.innerHead1}>
+                        {resume.project.title1 + "  "}
+                      </Text>
+                      <Text style={styles.innerHead2}>
+                        {"|" + "  "}
+                        {resume.project.techStacks1 + "  "}
+                      </Text>
+                      <Text style={styles.innerHead2}>
+                        {"|" + "  "}
+                        {resume.project.githubLink1 && (
+                          <Link
+                            style={styles.link}
+                            src={resume.project.githubLink1}
+                          >
+                            Source Code
+                          </Link>
+                        )}
+                      </Text>
+                    </View>
+                    <Text style={styles.innerHead2}>
+                      {resume.project.deployedLink1 && (
+                        <Link
+                          style={styles.link}
+                          src={resume.project.deployedLink1}
+                        >
+                          Deployed Link
+                        </Link>
+                      )}
+                    </Text>
+                  </View>
 
-              <View style={styles.points}>
-                <View style={styles.point}>
-                  <Text>•</Text>
-                  <Text>{resume.project.P1details1}</Text>
+                  <View style={styles.points}>
+                    <View style={styles.point}>
+                      <Text>•</Text>
+                      <Text>{resume.project.P1details1}</Text>
+                    </View>
+                    <View style={styles.point}>
+                      <Text>•</Text>
+                      <Text>{resume.project.P1details2}</Text>
+                    </View>
+                    <View style={styles.point}>
+                      <Text>•</Text>
+                      <Text>{resume.project.P1details3}</Text>
+                    </View>
+                  </View>
                 </View>
-                <View style={styles.point}>
-                  <Text>•</Text>
-                  <Text>{resume.project.P1details2}</Text>
-                </View>
-                <View style={styles.point}>
-                  <Text>•</Text>
-                  <Text>{resume.project.P1details3}</Text>
-                </View>
-              </View>
-            </View>
+              )}
           </View>
 
           {/* skills Section */}
@@ -424,7 +428,7 @@ const Resume = () => {
           </View>
 
           {/* Acheivements Section */}
-          {/* <View style={styles.sections}>
+          <View style={styles.sections}>
             <Text style={styles.heading}>Acheivements</Text>
             <Svg height="2" width="530">
               <Line
@@ -456,7 +460,7 @@ const Resume = () => {
                 </View>
               </View>
             </View>
-          </View> */}
+          </View>
         </Page>
       </Document>
     </PDFViewer>

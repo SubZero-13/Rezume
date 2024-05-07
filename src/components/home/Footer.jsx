@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../logo.svg";
 
 const Footer = () => {
   return (
@@ -10,7 +9,12 @@ const Footer = () => {
           <div>
             <div className="flex justify-center text-teal-600 sm:justify-start">
               <Link to="/">
-                <img src={logo} alt="logo" height={80} width={100} />
+                <img
+                  src="/assets/logo.svg"
+                  alt="logo"
+                  height={80}
+                  width={100}
+                />
               </Link>
             </div>
 

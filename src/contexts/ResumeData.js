@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export const ResumeData = createContext();
@@ -13,7 +13,6 @@ const ResumeContextProvider = (props) => {
       acheivement: {},
     }
   );
-  const { unregister } = useForm();
 
   const [experienceCount, setExperienceCount] = useState(1);
   const [projectCount, setProjectCount] = useState(1);
@@ -51,14 +50,6 @@ const ResumeContextProvider = (props) => {
     delete resume.experience[`Ex${i}details1`];
     delete resume.experience[`Ex${i}details2`];
     delete resume.experience[`Ex${i}details3`];
-    unregister(resume.experience[`designation${i}`]);
-    // delete resume.experience[`designation${i}`];
-    // delete resume.experience[`company${i}`];
-    // delete resume.experience[`duration${i}`];
-    // delete resume.experience[`location${i}`];
-    // delete resume.experience[`Ex${i}details1`];
-    // delete resume.experience[`Ex${i}details2`];
-    updateExperience(resume.experience);
     setResume({ ...resume, experience: resume.experience });
     console.log(resume.experience);
     setExperienceCount(experienceCount - 1);
@@ -73,10 +64,19 @@ const ResumeContextProvider = (props) => {
     delete resume.project[`P${i}details1`];
     delete resume.project[`P${i}details2`];
     delete resume.project[`P${i}details3`];
-    updateExperience(resume.project);
     setResume({ ...resume, project: resume.project });
     console.log(resume.project);
     setProjectCount(projectCount - 1);
+  };
+
+  const deleteEduItem = (i) => {
+    delete resume.education[`title${i}`];
+    delete resume.education[`college${i}`];
+    delete resume.education[`duration${i}`];
+    delete resume.education[`location${i}`];
+    setResume({ ...resume, education: resume.education });
+    console.log(resume.education);
+    setEducationCount(educationCount - 1);
   };
 
   useEffect(() => {
@@ -99,6 +99,7 @@ const ResumeContextProvider = (props) => {
     setEducationCount,
     deleteExpItem,
     deleteProjectItem,
+    deleteEduItem,
   };
 
   return (

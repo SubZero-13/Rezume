@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Main from "./components/Main";
+import Home from "./components/home/Home";
+import Main from "./components/home/Main";
 import Resume from "./Resume/Resume";
 
 function App() {

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import InputControl from "./InputControl";
 import { ChevronLeft, ChevronRight, Plus, Trash } from "lucide-react";
 import { ResumeData } from "../../contexts/ResumeData";
@@ -12,13 +12,17 @@ const Projects = ({ activeIndex, setactiveIndex }) => {
     updateProject,
     resume,
   } = useContext(ResumeData);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const projectSubmit = (data) => {
     updateProject(data);
     console.log(data);
     setactiveIndex(activeIndex + 1);
   };
+
+  useEffect(() => {
+    reset();
+  }, [deleteProjectItem]);
   return (
     <form
       className="mt-2 mx-3"
@@ -112,10 +116,10 @@ const Projects = ({ activeIndex, setactiveIndex }) => {
         );
       })}
       {projectCount > 1 && (
-        <div className="sm:flex sm:gap-4 ">
+        <div className="flex gap-4 ">
           <div
-            className="rounded-xl bg-[white] md:px-6 md:py-3 px-3 py-1 text-sm font-semibold flex md:gap-2 gap-1 text-center text-primary shadow-[0_3px_10px_rgb(0,0,0,0.2)] cursor-pointer mx-auto hover:bg-primary hover:text-[white]"
-            onClick={() => deleteProjectItem(projectCount)}
+            className="rounded-lg bg-[white] md:px-6 md:py-3 px-3 py-2 text-sm font-semibold flex md:gap-2 gap-1 text-center text-primary shadow-[0_3px_10px_rgb(0,0,0,0.2)] cursor-pointer mx-auto hover:bg-primary hover:text-[white]"
+            onClick={() => deleteProjectItem(projectCount - 1)}
           >
             Delete
             <Trash width={20} height={20} />
@@ -126,7 +130,7 @@ const Projects = ({ activeIndex, setactiveIndex }) => {
         <div
           className="flex mt-8 gap-2 align-middle text-center cursor-pointer"
           onClick={() =>
-            projectCount < 4 ? setProjectCount((_) => _ + 1) : null
+            projectCount < 3 ? setProjectCount((_) => _ + 1) : null
           }
         >
           <Plus className="bg-primary text-[white] rounded-lg p-1 md:w-7 md:h-7 w-5 h-5" />

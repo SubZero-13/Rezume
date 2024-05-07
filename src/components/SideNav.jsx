@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../logo.svg";
 import { ChevronRight, Store } from "lucide-react";
 
 const SideNav = ({ sections, activeIndex, setactiveIndex }) => {
@@ -30,7 +29,7 @@ const SideNav = ({ sections, activeIndex, setactiveIndex }) => {
         <div className="flex gap-x-4 items-center">
           <Link to="/">
             <img
-              src={logo}
+              src="/assets/logo.svg"
               className={`cursor-pointer duration-500 ${
                 open && "rotate-[360deg]"
               }`}
