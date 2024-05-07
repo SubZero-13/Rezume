@@ -13,6 +13,7 @@ const PersonalInfo = ({ activeIndex, setactiveIndex }) => {
     activeIndex === 5 ? setactiveIndex(0) : setactiveIndex(activeIndex + 1);
     console.log(data);
   };
+
   return (
     <form
       className="mt-2 md:mx-3 px-2"
@@ -22,6 +23,7 @@ const PersonalInfo = ({ activeIndex, setactiveIndex }) => {
     >
       <div className="flex md:gap-24 gap-1  md:flex-row flex-col">
         <InputControl
+          type="text"
           label="First Name"
           name="firstName"
           placeholder="Enter your first name"
@@ -31,6 +33,7 @@ const PersonalInfo = ({ activeIndex, setactiveIndex }) => {
         />
 
         <InputControl
+          type="text"
           label="Last Name"
           name="LastName"
           placeholder="Enter your last name"
@@ -40,12 +43,14 @@ const PersonalInfo = ({ activeIndex, setactiveIndex }) => {
       </div>
       <div className="flex md:gap-24 mt-1 gap-1 md:flex-row flex-col">
         <InputControl
+          type="url"
           label="Linkedin Link"
           placeholder="Enter your linkedin profile link"
           register={register("linkedin")}
           defaultValue={resume.personal.linkedin}
         />
         <InputControl
+          type="url"
           label="Github Link"
           placeholder="Enter your github profile link"
           register={register("github")}
@@ -55,12 +60,14 @@ const PersonalInfo = ({ activeIndex, setactiveIndex }) => {
 
       <div className="flex md:gap-24 mt-1 gap-1 md:flex-row flex-col">
         <InputControl
+          type="email"
           label="Email"
           placeholder="Enter your email"
           register={register("email")}
           defaultValue={resume.personal.email}
         />
         <InputControl
+          type="text"
           label="Enter phone"
           placeholder="Enter your phone number"
           register={register("phone")}

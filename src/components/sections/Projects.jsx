@@ -21,7 +21,7 @@ const Projects = ({ activeIndex, setactiveIndex }) => {
   };
 
   useEffect(() => {
-    reset();
+    reset((resume.project[`title${projectCount - 1}`] = ""));
   }, [deleteProjectItem]);
   return (
     <form

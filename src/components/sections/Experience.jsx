@@ -12,17 +12,16 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
     updateExperience,
     resume,
   } = useContext(ResumeData);
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, resetField, reset } = useForm();
 
   const ExperienceSubmit = (data) => {
     updateExperience(data);
-    reset();
     console.log(data);
     activeIndex === 5 ? setactiveIndex(0) : setactiveIndex(activeIndex + 1);
   };
 
   useEffect(() => {
-    reset();
+    reset((resume.experience[`designation${experienceCount - 1}`] = ""));
   }, [deleteExpItem]);
 
   return (

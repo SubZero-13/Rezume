@@ -9,10 +9,10 @@ const InputControl = ({ label, detail, ...props }) => {
         </label>
       )}
       <input
-        type="text"
         {...props}
         // {...register}
         {...props.register}
+        required
         className={`${
           detail && "md:min-w-[40rem]"
         } md:h-12 h-8 max-w-[80%] md:min-w-72 w-[20rem] md:p-4 p-2 rounded-lg border-[1px] border-[#dedede]`}

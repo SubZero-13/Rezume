@@ -21,7 +21,7 @@ const Education = ({ activeIndex, setactiveIndex }) => {
   };
 
   useEffect(() => {
-    reset();
+    reset((resume.education[`college${educationCount - 1}`] = ""));
   }, [deleteEduItem]);
 
   return (
