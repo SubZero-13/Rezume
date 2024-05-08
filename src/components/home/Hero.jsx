@@ -29,7 +29,8 @@ const Hero = () => {
         <div className="sm:flex sm:gap-4">
           <a
             className="rounded bg-transparent px-12 py-4 text-base font-semibold text-primary flex gap-1"
-            href="/"
+            href="https://drive.google.com/file/d/1GQFDfBrZ-ZtKOirUTQ-B5u2qdb8BjWpk/view"
+            target="_blank"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
