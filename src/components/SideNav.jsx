@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronRight, Store } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const SideNav = ({ sections, activeIndex, setactiveIndex }) => {
   const [width, setWidth] = useState(window.innerWidth);

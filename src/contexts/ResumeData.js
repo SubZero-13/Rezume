@@ -1,5 +1,4 @@
-import React, { createContext, useCallback, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import React, { createContext, useEffect, useState } from "react";
 
 export const ResumeData = createContext();
 const ResumeContextProvider = (props) => {

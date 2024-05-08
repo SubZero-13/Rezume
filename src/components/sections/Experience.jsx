@@ -74,7 +74,7 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
               />
             </div>
 
-            <div className="font-semibold text-base mt-4">
+            <div className="font-semibold text-base mt-4 text-[#646d8c]">
               Enter work description
             </div>
             <div className="flex mb-8 flex-col">
@@ -89,7 +89,7 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
 
               <div className="flex flex-col gap-2">
                 <InputControl
-                  placeholder="What your responsibilities were"
+                  placeholder="Improvement or impact you made in the company"
                   detail={true}
                   register={register(`Ex${i}details2`)}
                   defaultValue={resume.experience[`Ex${i}details2`]}
@@ -137,23 +137,23 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
       <div className="flex justify-between my-10">
         <div className="sm:flex sm:gap-4">
           <button
-            className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
+            className="bg-primary rounded  md:px-8 px-4 md:py-3 py-2 text-base font-semibold text-[white] transition hover:rotate-2 flex md:gap-2 gap-1 text-center  shadow items-center"
             onClick={() => {
               setactiveIndex(activeIndex - 1);
             }}
           >
-            <ChevronLeft width={28} height={28} />
-            Prev
+            <ChevronLeft width={27} height={25} />
+            <p className="flex items-center justify-center">Prev</p>
           </button>
         </div>
-        {/* next button */}
+
         <div className="sm:flex sm:gap-4">
           <button
-            className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
+            className="bg-primary rounded  md:px-8 px-4 md:py-3 py-2 text-base font-semibold text-[white] transition hover:rotate-2 flex md:gap-2 gap-1 text-center  shadow items-center"
             type="submit"
           >
-            Next
-            <ChevronRight width={28} height={28} />
+            <p className="flex items-center justify-center">Next</p>
+            <ChevronRight width={27} height={25} />
           </button>
         </div>
       </div>

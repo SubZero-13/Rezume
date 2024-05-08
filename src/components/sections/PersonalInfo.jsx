@@ -78,16 +78,11 @@ const PersonalInfo = ({ activeIndex, setactiveIndex }) => {
       {/* next button starts*/}
       <div className=" sm:gap-4 flex justify-end my-10">
         <button
-          className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
-          // onClick={() => {
-          //   activeIndex === 5
-          //     ? setactiveIndex(0)
-          //     : setactiveIndex(activeIndex + 1);
-          // }}
+          className="bg-primary rounded  md:px-8 px-4 md:py-3 py-2 text-base font-semibold text-[white] transition hover:rotate-2 flex md:gap-2 gap-1 text-center  shadow items-center"
           type="submit"
         >
-          Next
-          <ChevronRight width={28} height={28} />
+          <p className="flex items-center justify-center">Next</p>
+          <ChevronRight width={27} height={25} />
         </button>
       </div>
       {/* next button ends */}

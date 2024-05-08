@@ -27,9 +27,9 @@ const Hero = () => {
           </Link>
         </div>
         <div className="sm:flex sm:gap-4">
-          <Link
+          <a
             className="rounded bg-transparent px-12 py-4 text-base font-semibold text-primary flex gap-1"
-            href="/upload"
+            href="/"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,8 +69,10 @@ const Hero = () => {
                 ></path>
               </g>
             </svg>
-            See How It Works
-          </Link>
+            <h3 className="flex justify-center items-center text-center text-base">
+              See How It Works
+            </h3>
+          </a>
         </div>
       </div>
       <p className="max-w-[700px] text-base font-medium mt-1 pt-3 leading-8 text-center text-[#36454F]">

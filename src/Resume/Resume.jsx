@@ -113,10 +113,7 @@ const Rezume = ({ resume }) => {
       width: "500px",
     },
   });
-  const [width, setWidth] = useState(window.innerWidth);
   return (
-    // <PDFViewer>
-    // <PDFDownloadLink fileName="rezume23.pdf">
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.header}>
@@ -190,89 +187,94 @@ const Rezume = ({ resume }) => {
         </View>
 
         {/* Experience section */}
-        <View style={styles.sections}>
-          <Text style={styles.heading}>Experience</Text>
-          <Svg height="2" width="530">
-            <Line
-              x1="900"
-              y1="0"
-              x2="0"
-              y2="0"
-              strokeWidth={1}
-              stroke="black"
-            />
-          </Svg>
-          <View style={styles.section}>
-            <View style={styles.innerHead}>
-              <Text style={styles.innerHead1}>
-                {rezume.experience.designation0}
-              </Text>
-              <Text style={styles.innerHead2}>
-                {rezume.experience.duration0}
-              </Text>
-            </View>
-            <View style={styles.innerHead}>
-              <Text style={styles.innerHead2}>
-                {rezume.experience.company0}
-              </Text>
-              <Text style={styles.innerHead2}>
-                {rezume.experience.location0}
-              </Text>
-            </View>
-            <View style={styles.points}>
-              <View style={styles.point}>
-                <Text>•</Text>
-                <Text>{rezume.experience.Ex0details1}</Text>
-              </View>
-              <View style={styles.point}>
-                <Text>•</Text>
-                <Text>{rezume.experience.Ex0details2}</Text>
-              </View>
-              <View style={styles.point}>
-                <Text>•</Text>
-                <Text>{rezume.experience.Ex0details3}</Text>
-              </View>
-            </View>
-          </View>
-
-          {rezume.experience.designation1?.length > 2 &&
-            rezume.experience.duration1?.length > 2 &&
-            rezume.experience.company1?.length > 2 &&
-            rezume.experience.location1?.length > 2 && (
+        {rezume.experience.designation0?.length > 2 &&
+          rezume.experience.duration0?.length > 2 &&
+          rezume.experience.company0?.length > 2 &&
+          rezume.experience.location0?.length > 2 && (
+            <View style={styles.sections}>
+              <Text style={styles.heading}>Experience</Text>
+              <Svg height="2" width="530">
+                <Line
+                  x1="900"
+                  y1="0"
+                  x2="0"
+                  y2="0"
+                  strokeWidth={1}
+                  stroke="black"
+                />
+              </Svg>
               <View style={styles.section}>
                 <View style={styles.innerHead}>
                   <Text style={styles.innerHead1}>
-                    {rezume.experience.designation1}
+                    {rezume.experience.designation0}
                   </Text>
                   <Text style={styles.innerHead2}>
-                    {rezume.experience.duration1}
+                    {rezume.experience.duration0}
                   </Text>
                 </View>
                 <View style={styles.innerHead}>
                   <Text style={styles.innerHead2}>
-                    {rezume.experience.company1}
+                    {rezume.experience.company0}
                   </Text>
                   <Text style={styles.innerHead2}>
-                    {rezume.experience.location1}
+                    {rezume.experience.location0}
                   </Text>
                 </View>
                 <View style={styles.points}>
                   <View style={styles.point}>
                     <Text>•</Text>
-                    <Text>{rezume.experience.Ex1details1}</Text>
+                    <Text>{rezume.experience.Ex0details1}</Text>
                   </View>
                   <View style={styles.point}>
                     <Text>•</Text>
-                    <Text>{rezume.experience.Ex1details2}</Text>
+                    <Text>{rezume.experience.Ex0details2}</Text>
                   </View>
                   <View style={styles.point}>
                     <Text>•</Text>
-                    <Text>{rezume.experience.Ex1details3}</Text>
+                    <Text>{rezume.experience.Ex0details3}</Text>
                   </View>
                 </View>
               </View>
-            )}
-        </View>
+
+              {rezume.experience.designation1?.length > 2 &&
+                rezume.experience.duration1?.length > 2 &&
+                rezume.experience.company1?.length > 2 &&
+                rezume.experience.location1?.length > 2 && (
+                  <View style={styles.section}>
+                    <View style={styles.innerHead}>
+                      <Text style={styles.innerHead1}>
+                        {rezume.experience.designation1}
+                      </Text>
+                      <Text style={styles.innerHead2}>
+                        {rezume.experience.duration1}
+                      </Text>
+                    </View>
+                    <View style={styles.innerHead}>
+                      <Text style={styles.innerHead2}>
+                        {rezume.experience.company1}
+                      </Text>
+                      <Text style={styles.innerHead2}>
+                        {rezume.experience.location1}
+                      </Text>
+                    </View>
+                    <View style={styles.points}>
+                      <View style={styles.point}>
+                        <Text>•</Text>
+                        <Text>{rezume.experience.Ex1details1}</Text>
+                      </View>
+                      <View style={styles.point}>
+                        <Text>•</Text>
+                        <Text>{rezume.experience.Ex1details2}</Text>
+                      </View>
+                      <View style={styles.point}>
+                        <Text>•</Text>
+                        <Text>{rezume.experience.Ex1details3}</Text>
+                      </View>
+                    </View>
+                  </View>
+                )}
+            </View>
+          )}
 
         {/* Projects Section */}
         <View style={styles.sections}>
@@ -421,42 +423,49 @@ const Rezume = ({ resume }) => {
         </View>
 
         {/* Acheivements Section */}
-        <View style={styles.sections}>
-          <Text style={styles.heading}>Acheivements</Text>
-          <Svg height="2" width="530">
-            <Line
-              x1="900"
-              y1="0"
-              x2="0"
-              y2="0"
-              strokeWidth={1}
-              stroke="black"
-            />
-          </Svg>
-          <View style={styles.section}>
-            <View style={styles.pointsArea}>
-              <View style={styles.AcheivementPoint}>
-                <Text>•</Text>
-                <Text>{rezume.acheivement.acheivement1}</Text>
-              </View>
-              <View style={styles.AcheivementPoint}>
-                <Text>•</Text>
-                <Text>{rezume.acheivement.acheivement2}</Text>
-              </View>
-              <View style={styles.AcheivementPoint}>
-                <Text>•</Text>
-                <Text>{rezume.acheivement.acheivement3}</Text>
-              </View>
-              <View style={styles.AcheivementPoint}>
-                <Text>•</Text>
-                <Text>{rezume.acheivement.acheivement4}</Text>
+        {rezume.acheivement.acheivement1?.length > 2 && (
+          <View style={styles.sections}>
+            <Text style={styles.heading}>Acheivements</Text>
+            <Svg height="2" width="530">
+              <Line
+                x1="900"
+                y1="0"
+                x2="0"
+                y2="0"
+                strokeWidth={1}
+                stroke="black"
+              />
+            </Svg>
+            <View style={styles.section}>
+              <View style={styles.pointsArea}>
+                <View style={styles.AcheivementPoint}>
+                  <Text>•</Text>
+                  <Text>{rezume.acheivement.acheivement1}</Text>
+                </View>
+                {rezume.acheivement.acheivement2?.length > 2 && (
+                  <View style={styles.AcheivementPoint}>
+                    <Text>•</Text>
+                    <Text>{rezume.acheivement.acheivement2}</Text>
+                  </View>
+                )}
+                {rezume.acheivement.acheivement3?.length > 2 && (
+                  <View style={styles.AcheivementPoint}>
+                    <Text>•</Text>
+                    <Text>{rezume.acheivement.acheivement3}</Text>
+                  </View>
+                )}
+                {rezume.acheivement.acheivement4?.length > 2 && (
+                  <View style={styles.AcheivementPoint}>
+                    <Text>•</Text>
+                    <Text>{rezume.acheivement.acheivement4}</Text>
+                  </View>
+                )}
               </View>
             </View>
           </View>
-        </View>
+        )}
       </Page>
     </Document>
-    // </PDFDownloadLink>
   );
 };
 
