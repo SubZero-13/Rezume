@@ -64,14 +64,10 @@ const Acheivements = ({ activeIndex, setactiveIndex }) => {
             Prev
           </button>
         </div>
+
         <div className="sm:flex sm:gap-4">
           <button
             className="rounded-lg bg-primary md:px-6 md:py-3 px-3 py-1 text-base font-semibold flex md:gap-2 gap-1 text-center text-[white] shadow"
-            // onClick={() => {
-            //   activeIndex === 5
-            //     ? setactiveIndex(0)
-            //     : setactiveIndex(activeIndex + 1);
-            // }}
             type="submit"
           >
             Next

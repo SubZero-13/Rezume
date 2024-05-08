@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ResumeData } from "../contexts/ResumeData";
 import {
   Text,
@@ -11,10 +11,12 @@ import {
   Font,
   Svg,
   Line,
+  PDFDownloadLink,
 } from "@react-pdf/renderer";
 
 const Resume = () => {
   const { resume } = useContext(ResumeData);
+
   Font.register({
     family: "PTserif",
     fonts: [
@@ -112,8 +114,10 @@ const Resume = () => {
       width: "500px",
     },
   });
+  const [width, setWidth] = useState(window.innerWidth);
   return (
-    <PDFViewer>
+    // <PDFViewer>
+    <PDFDownloadLink fileName="resume23.pdf">
       <Document>
         <Page size="A4" style={styles.page}>
           <View style={styles.header}>
@@ -463,7 +467,7 @@ const Resume = () => {
           </View>
         </Page>
       </Document>
-    </PDFViewer>
+    </PDFDownloadLink>
   );
 };
 

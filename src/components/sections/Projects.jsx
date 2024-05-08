@@ -83,13 +83,13 @@ const Projects = ({ activeIndex, setactiveIndex }) => {
                 />
               </div>
             </div> */}
-            <div className="font-semibold text-base mt-4">
+            <div className="font-semibold text-base mt-4 text-[#646d8c]">
               Enter Project description
             </div>
             <div className="flex mb-8 flex-col">
               <div className="flex flex-col gap-2">
                 <InputControl
-                  placeholder="What your responsibilities were"
+                  placeholder="One liner description for it"
                   detail={true}
                   register={register(`P${i}details1`)}
                   defaultValue={resume.project[`P${i}details1`]}
@@ -97,7 +97,7 @@ const Projects = ({ activeIndex, setactiveIndex }) => {
               </div>
               <div className="flex flex-col gap-2">
                 <InputControl
-                  placeholder="What your responsibilities were"
+                  placeholder="Impact your Project have made"
                   detail={true}
                   register={register(`P${i}details2`)}
                   defaultValue={resume.project[`P${i}details2`]}
@@ -105,7 +105,7 @@ const Projects = ({ activeIndex, setactiveIndex }) => {
               </div>
               <div className="flex flex-col gap-2">
                 <InputControl
-                  placeholder="What your responsibilities were"
+                  placeholder="why it's out of the box "
                   register={register(`P${i}details3`)}
                   detail={true}
                   defaultValue={resume.project[`P${i}details3`]}
