@@ -19,9 +19,10 @@ const Experience = ({ activeIndex, setactiveIndex }) => {
     console.log(data);
     activeIndex === 5 ? setactiveIndex(0) : setactiveIndex(activeIndex + 1);
   };
+  resume.experience.test = " ";
 
   useEffect(() => {
-    reset((resume.experience[`designation${experienceCount - 1}`] = ""));
+    reset((resume.experience.test = ""));
   }, [deleteExpItem]);
 
   return (

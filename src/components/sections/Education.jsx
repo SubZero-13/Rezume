@@ -19,9 +19,10 @@ const Education = ({ activeIndex, setactiveIndex }) => {
     activeIndex === 5 ? setactiveIndex(0) : setactiveIndex(activeIndex + 1);
     console.log(data);
   };
+  resume.education.test = " ";
 
   useEffect(() => {
-    reset((resume.education[`college${educationCount - 1}`] = ""));
+    reset((resume.education.test = ""));
   }, [deleteEduItem]);
 
   return (
