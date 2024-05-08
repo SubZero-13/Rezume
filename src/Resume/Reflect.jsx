@@ -1,4 +1,4 @@
-import { PDFViewer } from "@react-pdf/renderer";
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { useState } from "react";
 import Resume from "./Resume";
 
@@ -7,9 +7,9 @@ export default function Reflect() {
 
   //   if (width > 768) {
   return (
-    <PDFViewer>
-      <Resume />
-    </PDFViewer>
+    <PDFDownloadLink document={<Resume />} fileName="resume2.pdf">
+      Download Now
+    </PDFDownloadLink>
   );
   //   }
   //   } else {
