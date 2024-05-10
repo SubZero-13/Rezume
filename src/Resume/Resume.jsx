@@ -334,9 +334,7 @@ const Rezume = ({ resume }) => {
           </View>
 
           {rezume.project.title1?.length > 2 &&
-            rezume.project.techStacks11?.length > 2 &&
-            rezume.project.deployedLink1?.length > 2 &&
-            rezume.project.githubLink1?.length > 2 && (
+            rezume.project.techStacks1?.length > 2 && (
               <View style={styles.section}>
                 <View style={styles.innerHead}>
                   <View style={styles.projectTitle}>
@@ -380,10 +378,12 @@ const Rezume = ({ resume }) => {
                     <Text>•</Text>
                     <Text>{rezume.project.P1details2}</Text>
                   </View>
-                  <View style={styles.point}>
-                    <Text>•</Text>
-                    <Text>{rezume.project.P1details3}</Text>
-                  </View>
+                  {rezume.project.P1details3?.length > 2 && (
+                    <View style={styles.point}>
+                      <Text>•</Text>
+                      <Text>{rezume.project.P1details3}</Text>
+                    </View>
+                  )}
                 </View>
               </View>
             )}
