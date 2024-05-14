@@ -17,13 +17,13 @@ const Hero = () => {
         <strong>Rezume</strong> it's now possible!
       </p>
 
-      <div className="flex gap-5 mt-10 md:flex-row flex-col">
+      <div className="flex gap-5 mt-10 md:flex-row flex-col justify-center items-center">
         <div className="sm:flex sm:gap-4 ">
           <Link
             className="rounded-full bg-primary px-12 py-4 text-base font-semibold text-[white] shadow"
             to="/resume"
           >
-            Build Your Rezume Now
+            Build My Rezume Now
           </Link>
         </div>
         <div className="sm:flex sm:gap-4">
@@ -69,9 +69,7 @@ const Hero = () => {
                 ></path>
               </g>
             </svg>
-            <h3 className="flex justify-center items-center text-center text-base">
-              Check Your Resume Strength
-            </h3>
+            Check My Resume Strength
           </Link>
         </div>
       </div>
