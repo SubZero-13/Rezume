@@ -20,7 +20,7 @@ const Review = () => {
     setGeneratingAnswer(true);
     try {
       const response = await axios({
-        url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.REACT_APP_API_KEY}
+        url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${REACT_APP_API_KEY}
         `,
         method: "post",
         data: {
