@@ -16,6 +16,7 @@ const ResumeContextProvider = (props) => {
   const [experienceCount, setExperienceCount] = useState(1);
   const [projectCount, setProjectCount] = useState(1);
   const [educationCount, setEducationCount] = useState(1);
+  const [uploadedResume, setUploadedResume] = useState();
 
   function updatePersonal(data) {
     setResume({ ...resume, personal: data });
@@ -99,6 +100,8 @@ const ResumeContextProvider = (props) => {
     deleteExpItem,
     deleteProjectItem,
     deleteEduItem,
+    uploadedResume,
+    setUploadedResume,
   };
 
   return (

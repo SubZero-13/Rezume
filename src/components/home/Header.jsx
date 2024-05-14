@@ -38,7 +38,7 @@ const Header = () => {
               <li>
                 <a
                   className="text-[#899499] transition hover:text-primary"
-                  href="#about"
+                  href="/#about"
                 >
                   {" "}
                   About{" "}
@@ -47,7 +47,7 @@ const Header = () => {
               <li>
                 <a
                   className="text-[#899499] transition hover:text-primary"
-                  href="#steps"
+                  href="/#steps"
                 >
                   {" "}
                   How To{" "}

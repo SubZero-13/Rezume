@@ -27,10 +27,9 @@ const Hero = () => {
           </Link>
         </div>
         <div className="sm:flex sm:gap-4">
-          <a
+          <Link
             className="rounded bg-transparent px-12 py-4 text-base font-semibold text-primary flex gap-1"
-            href="https://drive.google.com/file/d/1GQFDfBrZ-ZtKOirUTQ-B5u2qdb8BjWpk/view"
-            target="_blank"
+            to="/review"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -71,9 +70,9 @@ const Hero = () => {
               </g>
             </svg>
             <h3 className="flex justify-center items-center text-center text-base">
-              See How It Works
+              Check Your Resume Strength
             </h3>
-          </a>
+          </Link>
         </div>
       </div>
       <p className="max-w-[700px] text-base font-medium mt-1 pt-3 leading-8 text-center text-[#36454F]">
