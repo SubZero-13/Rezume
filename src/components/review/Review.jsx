@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import UploadForm from "./UploadForm";
-import steps from "./steps.json";
 import { ResumeData } from "../../contexts/ResumeData";
 import axios from "axios";
 import Strength from "./Strength";
@@ -40,6 +39,24 @@ const Review = () => {
 
     setGeneratingAnswer(false);
   }
+
+  const steps = [
+    {
+      id: 1,
+      image: "/assets/resumeIcon.png",
+      title: "Upload Resume",
+    },
+    {
+      id: 2,
+      image: "/assets/descIcon.png",
+      title: "Processing",
+    },
+    {
+      id: 3,
+      image: "/assets/scoreIcon.png",
+      title: "Done",
+    },
+  ];
 
   return (
     <>
