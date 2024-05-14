@@ -31,7 +31,6 @@ const Review = () => {
       setAnswer(
         response["data"]["candidates"][0]["content"]["parts"][0]["text"]
       );
-      console.log(answer);
     } catch (error) {
       console.log(error);
       setAnswer("Sorry - Something went wrong. Please try again!");
