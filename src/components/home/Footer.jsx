@@ -139,11 +139,11 @@ const Footer = () => {
             <br />
             Created with ❤️ by
             <a
-              href="https://ashish4.vercel.app"
+              href="https://github.com/SubZero-13"
               className="text-[grey] underline transition hover:text-[grey]/75"
             >
               {" "}
-              Ashish
+              Aniket
             </a>
             .
           </p>
