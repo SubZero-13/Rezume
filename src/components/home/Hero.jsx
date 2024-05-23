@@ -37,35 +37,38 @@ const Hero = () => {
               id="play"
               className="w-7"
             >
+              {/* sdhe */}
               <g
                 data-name="Layer 2"
                 fill="#2451ff"
-                class="color000000 svgShape"
+                className="color000000 svgShape"
               >
+                {/*gfg*/}
                 <path
                   fill="#5073f9"
                   d="M58 32a25.88 25.88 0 0 1-7.62 18.38l-4.24-4.24a20 20 0 0 0 0-28.28l4.24-4.24A25.88 25.88 0 0 1 58 32Z"
-                  class="colorf95c50 svgShape"
+                  className="colorf95c50 svgShape"
                 ></path>
+                {/* fff */}
                 <path
                   fill="#445ec3"
                   d="M50.38 50.38a26 26 0 0 1-36.76 0l4.24-4.24a20 20 0 0 0 28.28 0Z"
-                  class="color44c3a0 svgShape"
+                  className="color44c3a0 svgShape"
                 ></path>
                 <path
                   fill="#6282fc"
                   d="m50.38 13.62-4.24 4.24a20 20 0 0 0-28.28 0l-4.24-4.24a26 26 0 0 1 36.76 0Z"
-                  class="colorfcd462 svgShape"
+                  className="colorfcd462 svgShape"
                 ></path>
                 <path
                   fill="#2451ff"
                   d="M12 32a19.94 19.94 0 0 0 5.86 14.14l-4.24 4.24a26 26 0 0 1 0-36.76l4.24 4.24A19.94 19.94 0 0 0 12 32Z"
-                  class="color2d93ba svgShape"
+                  className="color2d93ba svgShape"
                 ></path>
                 <path
                   fill="#0639fc"
                   d="m41 32-18-9v18l18-9z"
-                  class="colorfc0606 svgShape"
+                  className="colorfc0606 svgShape"
                 ></path>
               </g>
             </svg>

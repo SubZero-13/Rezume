@@ -18,6 +18,7 @@ const Review = () => {
 
   async function generateResponse() {
     setGeneratingAnswer(true);
+    console.log(process.env.REACT_APP_API_KEY);
     try {
       const response = await axios({
         url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.REACT_APP_API_KEY}
@@ -86,8 +87,7 @@ const Review = () => {
               {steps.map((step, i) => {
                 return (
                   <div
-                    className={`flex flex-col justify-center items-center z-10  rounded-lg p-1 
-                  `}
+                    className={`flex flex-col justify-center items-center z-10  rounded-lg p-1`} key = {step.id}
                   >
                     <div className="w-8 h-10 bg-[white]">
                       <img src={step.image} alt="resume" />

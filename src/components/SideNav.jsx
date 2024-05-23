@@ -22,7 +22,7 @@ const SideNav = ({ sections, activeIndex, setactiveIndex }) => {
         <img
           src="/assets/control.png"
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
-           border-2 rounded-full  ${!open && "rotate-180"}`}
+          border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
           alt="control"
         />
